@@ -5,10 +5,12 @@ import { theme } from "../../../theme";
 
 export default function Navbar() {
   return (
-        <NavbarStyled>
-          <Logo />
-          <NavbarItems />
-        </NavbarStyled>
+        <header>
+          <NavbarStyled>
+            <Logo />
+            <NavbarItems />
+          </NavbarStyled>
+        </header>
   )
 }
 
@@ -18,4 +20,6 @@ const NavbarStyled = styled.nav`
     padding: 18px 28px;
     background-color: ${theme.colors.black};
     color: ${theme.colors.white};
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 `;

@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import Navbar from "./Navbar/Navbar"
+import Navbar from "./Navbar/Navbar";
+import SideMenu from "../SideMenu";
 
 export default function DashboardPage() {
   return (
     <DashboardPageStyled>
         <Navbar />
         <div className="wrapper">
-            <aside>Aside</aside>
+            <SideMenu />
             <main>Main</main>
         </div>
     </DashboardPageStyled>
@@ -22,9 +23,10 @@ const DashboardPageStyled = styled.div`
     display: grid;
     grid-template-columns: 10% 1fr;
     flex: 1;
+  }
 
-    :first-child {
-        background: red;
-    }
+  main {
+    display: grid;
+    place-content: center;
   }
 `;

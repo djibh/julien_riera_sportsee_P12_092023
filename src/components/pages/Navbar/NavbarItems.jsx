@@ -14,7 +14,9 @@ export default function NavbarItems() {
 const NavbarItemsStyled = styled.div`
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex: 1;
+    font-size: 1.5rem;
 
     a {
         color: ${theme.colors.white};
