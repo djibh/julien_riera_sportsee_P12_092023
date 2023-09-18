@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { theme } from '../../../theme/index'
 
 export default function NavbarItems() {
   return <NavbarItemsStyled className="navbar-items">
@@ -14,4 +15,8 @@ const NavbarItemsStyled = styled.div`
     display: flex;
     justify-content: space-around;
     flex: 1;
+
+    a {
+        color: ${theme.colors.white};
+    }
 `;
