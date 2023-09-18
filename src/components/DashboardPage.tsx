@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./navbar/Navbar";
 import SideMenu from "./SideMenu";
 
 export default function DashboardPage() {
@@ -8,7 +8,10 @@ export default function DashboardPage() {
         <Navbar />
         <div className="wrapper">
             <SideMenu />
-            <main>Main</main>
+            <main>
+              <h1>Bonjour, Thomas</h1>
+              <h2>Félicitations ! Vous avez explosé vos objectifs d'hier !</h2>
+            </main>
         </div>
     </DashboardPageStyled>
   )

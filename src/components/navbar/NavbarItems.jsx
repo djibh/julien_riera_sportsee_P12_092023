@@ -13,10 +13,11 @@ export default function NavbarItems() {
 
 const NavbarItemsStyled = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex: 1;
-    font-size: 1.5rem;
+    /* max-width: 0%; */
+    font-size: 1.4rem;
 
     a {
         color: ${theme.colors.white};

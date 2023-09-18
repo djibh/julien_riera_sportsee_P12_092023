@@ -25,7 +25,7 @@ const SideMenuStyled = styled.div`
         display: flex;
         flex-direction: column;
         height: 80%;
-        max-height: 40%;
+        max-height: 50%;
         justify-content: space-between;
 
         & * {
