@@ -1,15 +1,21 @@
 import styled from "styled-components";
 import Navbar from "./navbar/Navbar";
 import SideMenu from "./SideMenu";
+import { useState } from "react";
+import { theme } from '../theme/index';
 
 export default function DashboardPage() {
+
+  // data à récupérer depuis la route /user/:id
+  const [firstName, setFirstName] = useState("utilisateur adoré")
+
   return (
     <DashboardPageStyled>
         <Navbar />
         <div className="wrapper">
             <SideMenu />
             <main>
-              <h1>Bonjour, Thomas</h1>
+              <h1>Bonjour, <span className="username">{firstName}</span></h1>
               <h2>Félicitations ! Vous avez explosé vos objectifs d'hier !</h2>
             </main>
         </div>
@@ -26,6 +32,10 @@ const DashboardPageStyled = styled.div`
     display: grid;
     grid-template-columns: 10% 1fr;
     flex: 1;
+
+    .username {
+      color: ${theme.colors.accentRed};
+    }
   }
 
   main {
