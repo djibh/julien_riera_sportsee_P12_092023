@@ -1,6 +1,10 @@
 export default function DashboardPage() {
   return (
-    <div>DashboardPage</div>
+    <div>
+        <nav>Navbar</nav>
+        <aside>Aside</aside>
+        <main>Main</main>
+    </div>
   )
 }
 
