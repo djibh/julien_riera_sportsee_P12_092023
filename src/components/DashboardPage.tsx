@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Navbar from "./Navbar/Navbar";
-import SideMenu from "../SideMenu";
+import SideMenu from "./SideMenu";
 
 export default function DashboardPage() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from '../../../theme/index'
+import { theme } from '../../theme/index'
 
 export default function NavbarItems() {
   return <NavbarItemsStyled className="navbar-items">

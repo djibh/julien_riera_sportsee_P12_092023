@@ -1,7 +1,7 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 
-import DashboardPage from './components/pages/DashboardPage'
+import DashboardPage from './components/DashboardPage'
 
 function App() {
   return <Routes>
