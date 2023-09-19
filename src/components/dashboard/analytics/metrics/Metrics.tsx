@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../../theme";
 
 export default function Metrics() {
     return (
@@ -14,4 +15,5 @@ const MetricsStyled = styled.div`
     background: red;
     color: white;
     font-size: 2rem;
+    border-radius: ${theme.borderRadius.medium};
 `;

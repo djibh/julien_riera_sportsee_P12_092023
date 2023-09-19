@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../theme/index";
-import Charts from "./Charts";
+import Charts from "./charts/Charts";
 import Metrics from "./metrics/Metrics";
 
 type MainProps = {
@@ -31,7 +31,6 @@ const AnalyticsStyled = styled.main`
     padding: 5em;
 
     .center-main {
-        height: 70vh;
         display: flex;
         flex-direction: column;
     }
