@@ -10,11 +10,13 @@ export default function SideMenu() {
             <img src="/icon-3.png" alt="icon3" />
             <img src="/icon-4.png" alt="icon4" />
         </div>
+        <h6>Copyright, SportSee 2023</h6>
     </SideMenuStyled>
   )
 }
 
 const SideMenuStyled = styled.div`
+    position: relative;
     display: grid;
     max-width: 117px;
     place-items: center;
@@ -24,12 +26,18 @@ const SideMenuStyled = styled.div`
     .category-filters {
         display: flex;
         flex-direction: column;
-        height: 80%;
-        max-height: 50%;
-        justify-content: space-between;
 
         & * {
-            padding-block: 4px;
+            padding-block: 8px;
         }
+    }
+
+    h6 {
+        position: absolute;
+        bottom: 1rem;
+        color: ${theme.colors.white};
+        font-size: 0.8rem;
+        writing-mode: vertical-rl;
+        transform: rotate(-180deg);
     }
 `;

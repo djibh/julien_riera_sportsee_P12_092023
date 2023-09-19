@@ -1,13 +1,20 @@
 import styled from "styled-components";
 import Navbar from "./navbar/Navbar";
 import SideMenu from "./SideMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { theme } from '../theme/index';
 
 export default function DashboardPage() {
 
   // data à récupérer depuis la route /user/:id
-  const [firstName, setFirstName] = useState("utilisateur adoré")
+  const [firstName, setFirstName] = useState("utilisateur inconnu")
+
+  useEffect(() => {
+    const username = 'Utilisateur adoré'
+  
+    setFirstName(username)
+  }, [])
+  
 
   return (
     <DashboardPageStyled>
