@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SideMenu from "../reusable/SideMenu";
 import { useEffect, useState } from "react";
-import Main from "./main/Main";
+import Analytics from "./analytics/Analytics";
 
 export default function DashboardPage() {
 
@@ -18,7 +18,7 @@ export default function DashboardPage() {
     <DashboardPageStyled>
       <div className="wrapper">
           <SideMenu />
-          <Main username={firstName}/>
+          <Analytics username={firstName}/>
       </div>
     </DashboardPageStyled>
   )

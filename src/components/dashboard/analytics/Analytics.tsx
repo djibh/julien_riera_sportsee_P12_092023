@@ -5,9 +5,10 @@ type MainProps = {
     username: string
 }
 
-export default function Main({ username }: MainProps) {
+export default function Analytics({ username }: MainProps) {
   return (
-             <MainStyled>
+             <AnalyticsStyled
+             >
               <div className="center-main">
                 <div className="greetings">
                   <h1>Bonjour, <span className="username">{username}</span></h1>
@@ -20,18 +21,17 @@ export default function Main({ username }: MainProps) {
                   </div>
                 </div>
               </div>
-            </MainStyled>
+            </AnalyticsStyled>
   )
 }
 
-const MainStyled = styled.main`
+const AnalyticsStyled = styled.main`
     display: grid;
     grid-template-columns: 1fr;
-    place-content: center;
-    padding: 2em 5em;
+    padding: 5em;
 
     .center-main {
-        height: 80vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;
     }
