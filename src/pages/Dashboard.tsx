@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Navbar from "./navbar/Navbar";
-import SideMenu from "./SideMenu";
+import Navbar from "../components/dashboard/navbar/Navbar";
+import SideMenu from "../components/dashboard/SideMenu";
 import { useEffect, useState } from "react";
-import { theme } from '../theme/index';
+import Main from "../components/dashboard/main/Main";
 
 export default function DashboardPage() {
 
@@ -11,7 +11,6 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const username = 'Utilisateur adoré'
-  
     setFirstName(username)
   }, [])
   
@@ -21,10 +20,7 @@ export default function DashboardPage() {
         <Navbar />
         <div className="wrapper">
             <SideMenu />
-            <main>
-              <h1>Bonjour, <span className="username">{firstName}</span></h1>
-              <h2>Félicitations ! Vous avez explosé vos objectifs d'hier !</h2>
-            </main>
+            <Main username={firstName}/>
         </div>
     </DashboardPageStyled>
   )
@@ -37,16 +33,7 @@ const DashboardPageStyled = styled.div`
 
   .wrapper {
     display: grid;
-    grid-template-columns: 10% 1fr;
+    grid-template-columns: 120px 1fr;
     flex: 1;
-
-    .username {
-      color: ${theme.colors.accentRed};
-    }
-  }
-
-  main {
-    display: grid;
-    place-content: center;
   }
 `;

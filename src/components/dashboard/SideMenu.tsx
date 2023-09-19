@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../theme";
+import { theme } from "../../theme";
 
 export default function SideMenu() {
   return (
@@ -18,7 +18,7 @@ export default function SideMenu() {
 const SideMenuStyled = styled.div`
     position: relative;
     display: grid;
-    max-width: 117px;
+    /* max-width: 117px; */
     place-items: center;
     background-color: ${theme.colors.black};
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
