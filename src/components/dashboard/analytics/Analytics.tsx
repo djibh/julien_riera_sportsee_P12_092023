@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../theme/index";
 import Charts from "./Charts";
+import Metrics from "./metrics/Metrics";
 
 type MainProps = {
     username: string
@@ -16,11 +17,8 @@ export default function Analytics({ username }: MainProps) {
                   <h2>Félicitations ! Vous avez explosé vos objectifs d'hier !</h2>
                 </div>
                 <div className="analytics">
-                  <div className="charts">
                     <Charts />
-                  </div>
-                  <div className="metrics">
-                  </div>
+                    <Metrics />
                 </div>
               </div>
             </AnalyticsStyled>
@@ -55,16 +53,4 @@ const AnalyticsStyled = styled.main`
         gap: 2em;
         height: 100%;
     }
-
-    .charts {
-        width: 70%;
-        background: ${theme.colors.chartsBackgroundColor};
-    }
-
-    .metrics {
-        width: 30%;
-        background: red;
-    }
-
-
 `;
