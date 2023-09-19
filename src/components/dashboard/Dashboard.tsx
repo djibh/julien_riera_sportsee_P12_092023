@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import Navbar from "../components/dashboard/navbar/Navbar";
-import SideMenu from "../components/dashboard/SideMenu";
+import SideMenu from "../reusable/SideMenu";
 import { useEffect, useState } from "react";
-import Main from "../components/dashboard/main/Main";
+import Main from "./main/Main";
 
 export default function DashboardPage() {
 
@@ -17,11 +16,10 @@ export default function DashboardPage() {
 
   return (
     <DashboardPageStyled>
-        <Navbar />
-        <div className="wrapper">
-            <SideMenu />
-            <Main username={firstName}/>
-        </div>
+      <div className="wrapper">
+          <SideMenu />
+          <Main username={firstName}/>
+      </div>
     </DashboardPageStyled>
   )
 }

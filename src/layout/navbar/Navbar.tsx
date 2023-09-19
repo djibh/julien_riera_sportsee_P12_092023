@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Logo from "./Logo";
+import Logo from "../../components/reusable/Logo";
 import NavbarItems from "./NavbarItems";
-import { theme } from "../../../theme/index";
+import { theme } from "../../theme/index";
 
 export default function Navbar() {
   return (

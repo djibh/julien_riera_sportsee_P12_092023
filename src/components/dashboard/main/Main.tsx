@@ -38,6 +38,10 @@ const MainStyled = styled.main`
 
     .greetings {
         margin-bottom: 2em;
+
+        h1 {
+            margin: 0;
+        }
         
         .username {
           color: ${theme.colors.accentRed};
