@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../theme/index";
+import Charts from "./Charts";
 
 type MainProps = {
     username: string
@@ -16,6 +17,7 @@ export default function Analytics({ username }: MainProps) {
                 </div>
                 <div className="analytics">
                   <div className="charts">
+                    <Charts />
                   </div>
                   <div className="metrics">
                   </div>
