@@ -27,8 +27,9 @@ export default function Analytics({ username }: MainProps) {
 
 const AnalyticsStyled = styled.main`
     display: grid;
+    justify-content: space-between;
     grid-template-columns: 1fr;
-    padding: 5em;
+    padding: 3em;
 
     .center-main {
         display: flex;
@@ -39,7 +40,12 @@ const AnalyticsStyled = styled.main`
         margin-bottom: 2em;
 
         h1 {
-            margin: 0;
+          font-size: 2.2rem;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 1.4rem;
         }
         
         .username {
@@ -49,7 +55,8 @@ const AnalyticsStyled = styled.main`
 
     .analytics {
         display: flex;
-        gap: 2em;
-        height: 100%;
+        justify-content: space-between;
+        gap: 1em;
+        min-height: 450px;
     }
 `;

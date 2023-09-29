@@ -27,13 +27,22 @@ export default function Charts() {
 
 const ChartsStyled = styled.div`
     box-sizing: border-box;
-    width: 70%;
-    padding: 2em 3em;
-    background: ${theme.colors.chartsBackgroundColor};
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 75%;
+    padding: 1em 2em;
     border-radius: ${theme.borderRadius.medium};
 
     .square-charts {
       display: flex;
       justify-content: space-between;
+      gap: 10px;
+      height: 45%;
+    }
+
+    .square-charts > * {
+      /* max-height: 250px; */
+      aspect-ratio: 1;
     }
 `;

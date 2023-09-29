@@ -1,4 +1,4 @@
-import { ResponsiveContainer, PieChart, Pie } from 'recharts';
+import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer } from 'recharts';
 import { theme } from '../../../../theme';
 
 type ScoreChartProps = {
@@ -7,13 +7,28 @@ type ScoreChartProps = {
 
 export default function ScoreChart({ score }: ScoreChartProps) {
   
-  const newArray = [score]
+  const data = [
+    {
+      "name": "18-24",
+      "uv": score,
+      "pv": 2400,
+      "fill": "#8884d8"
+    }
+  ]
   
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <PieChart style={{backgroundColor: `${theme.colors.chartsBackgroundColor}`}} width={100} height={100}>
-        <Pie data={newArray} dataKey="todayScore" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill={theme.colors.accentRed} />
-      </PieChart>
-    </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
+          <RadialBarChart 
+            innerRadius="65%" 
+            outerRadius="80%" 
+            data={data} 
+            startAngle={90} 
+            endAngle={200}
+            style={{backgroundColor: `${theme.colors.radialBarBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
+          >
+            <RadialBar dataKey='uv'cornerRadius={10}/>
+            <Tooltip />
+          </RadialBarChart>
+      </ResponsiveContainer>
   )
 }

@@ -16,6 +16,7 @@ export default function Navbar() {
 
 const NavbarStyled = styled.nav`
     display: flex;
+    width: 100%;
     justify-content: space-between;
     padding: 18px 28px;
     background-color: ${theme.colors.black};

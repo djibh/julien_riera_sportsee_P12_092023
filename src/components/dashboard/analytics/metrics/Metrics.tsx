@@ -10,7 +10,7 @@ export default function Metrics() {
 }
 
 const MetricsStyled = styled.div`
-    width: 30%;
+    width: 23%;
     padding: 10px;
     background: red;
     color: white;

@@ -7,7 +7,7 @@ type ActivityChartProps = {
 
 export default function ActivityChart({ data }: ActivityChartProps) {
   return (
-    <ResponsiveContainer width="100%" height="60%">
+    <ResponsiveContainer width="100%" height="50%">
         <BarChart
           width={300}
           height={100}

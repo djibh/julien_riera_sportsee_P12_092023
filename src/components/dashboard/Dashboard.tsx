@@ -16,22 +16,14 @@ export default function DashboardPage() {
 
   return (
     <DashboardPageStyled>
-      <div className="wrapper">
-          <SideMenu />
-          <Analytics username={firstName}/>
-      </div>
+      <SideMenu />
+      <Analytics username={firstName}/>
     </DashboardPageStyled>
   )
 }
 
 const DashboardPageStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-
-  .wrapper {
-    display: grid;
+  display: grid;
     grid-template-columns: 120px 1fr;
     flex: 1;
-  }
 `;
