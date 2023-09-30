@@ -7,7 +7,7 @@ type ActivityChartProps = {
 
 export default function ActivityChart({ data }: ActivityChartProps) {
   return (
-    <ResponsiveContainer width="100%" height="50%">
+    <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={300}
           height={100}
@@ -18,6 +18,7 @@ export default function ActivityChart({ data }: ActivityChartProps) {
             left: 5,
             bottom: 5,
           }}
+          style={{backgroundColor: `${theme.colors.radialBarBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={`${theme.colors.barChartGridGrey}`}/>
           <XAxis dataKey="day"  />
