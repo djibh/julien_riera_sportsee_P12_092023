@@ -24,7 +24,7 @@ export default function ScoreChart({ score }: ScoreChartProps) {
             data={data} 
             startAngle={90} 
             endAngle={200}
-            style={{backgroundColor: `${theme.colors.radialBarBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
+            style={{backgroundColor: `${theme.colors.analyticsBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
           >
             <RadialBar dataKey='uv'cornerRadius={10}/>
             <Tooltip />

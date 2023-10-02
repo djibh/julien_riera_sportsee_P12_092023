@@ -9,7 +9,7 @@ const colors = {
     lineChartGrey: "#ffffff",
     radarChartBlack: "#282D30",
     radarChartRed: "#FF0101",
-    radialBarBackground: "#fbfbfb",
+    analyticsBackground: "#fbfbfb",
 }
 
 const borderRadius = {

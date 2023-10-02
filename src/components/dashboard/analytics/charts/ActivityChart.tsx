@@ -18,7 +18,7 @@ export default function ActivityChart({ data }: ActivityChartProps) {
             left: 5,
             bottom: 5,
           }}
-          style={{backgroundColor: `${theme.colors.radialBarBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
+          style={{backgroundColor: `${theme.colors.analyticsBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
         >
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={`${theme.colors.barChartGridGrey}`}/>
           <XAxis dataKey="day"  />

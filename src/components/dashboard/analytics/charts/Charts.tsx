@@ -31,7 +31,6 @@ const ChartsStyled = styled.div`
     flex-direction: column;
     gap: 2em;
     width: 75%;
-    padding: 1em 2em;
     border-radius: ${theme.borderRadius.medium};
 
     .square-charts {
