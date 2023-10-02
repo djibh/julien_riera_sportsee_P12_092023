@@ -9,8 +9,7 @@ type MainProps = {
 
 export default function Analytics({ username }: MainProps) {
   return (
-             <AnalyticsStyled
-             >
+             <AnalyticsStyled>
               <div className="center-main">
                 <div className="greetings">
                   <h1>Bonjour, <span className="username">{username}</span></h1>
@@ -27,15 +26,16 @@ export default function Analytics({ username }: MainProps) {
 
 const AnalyticsStyled = styled.main`
     position: absolute;
-    top: 80px;
+    top: 0;
     left: 100px;
     right: 0;
     display: grid;
-    max-width: 1400px;
+    max-width: 1450px;
     margin: auto;
     justify-content: space-between;
     grid-template-columns: 1fr;
     padding: 3em;
+    margin-top: 8em;
 
     .center-main {
         display: flex;
@@ -63,6 +63,6 @@ const AnalyticsStyled = styled.main`
         display: flex;
         justify-content: space-between;
         gap: 1em;
-        min-height: 450px;
+        /* min-height: 450px; */
     }
 `;

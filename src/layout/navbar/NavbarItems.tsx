@@ -6,7 +6,7 @@ export default function NavbarItems() {
   return <NavbarItemsStyled className="navbar-items">
             <Link to={"/"}>Accueil</Link>
             <Link to={"/"}>Profil</Link>
-            <Link to={"/"}>Réglages</Link>
+            <Link to={"/settings"}>Réglages</Link>
             <Link to={"/"}>Communauté</Link>
         </NavbarItemsStyled>
 }

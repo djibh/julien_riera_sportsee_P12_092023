@@ -16,7 +16,7 @@ export default function DashboardPage() {
 
   return (
     <DashboardPageStyled>
-      <SideMenu />
+      {/* <SideMenu /> */}
       <Analytics username={firstName}/>
     </DashboardPageStyled>
   )

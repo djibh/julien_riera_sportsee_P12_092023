@@ -42,7 +42,6 @@ const ChartsStyled = styled.div`
     }
 
     .square-charts > * {
-      /* max-height: 250px; */
       aspect-ratio: 1;
     }
 `;
