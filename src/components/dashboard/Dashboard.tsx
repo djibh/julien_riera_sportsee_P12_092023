@@ -23,7 +23,4 @@ export default function DashboardPage() {
 }
 
 const DashboardPageStyled = styled.div`
-  display: grid;
-    grid-template-columns: 120px 1fr;
-    flex: 1;
 `;

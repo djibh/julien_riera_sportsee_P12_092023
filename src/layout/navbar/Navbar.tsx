@@ -15,6 +15,8 @@ export default function Navbar() {
 }
 
 const NavbarStyled = styled.nav`
+    position: fixed;
+    z-index: 5;
     display: flex;
     width: 100%;
     justify-content: space-between;

@@ -26,7 +26,13 @@ export default function Analytics({ username }: MainProps) {
 }
 
 const AnalyticsStyled = styled.main`
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    right: 0;
     display: grid;
+    max-width: 1400px;
+    margin: auto;
     justify-content: space-between;
     grid-template-columns: 1fr;
     padding: 3em;

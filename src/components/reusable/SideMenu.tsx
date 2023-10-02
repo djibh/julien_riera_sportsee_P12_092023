@@ -16,7 +16,11 @@ export default function SideMenu() {
 }
 
 const SideMenuStyled = styled.div`
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 110px;
     display: grid;
     place-items: center;
     background-color: ${theme.colors.black};
