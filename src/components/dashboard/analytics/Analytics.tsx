@@ -35,7 +35,7 @@ const AnalyticsStyled = styled.main`
     justify-content: space-between;
     grid-template-columns: 1fr;
     padding: 3em;
-    margin-top: 8em;
+    margin-top: 6em;
 
     .center-main {
         display: flex;

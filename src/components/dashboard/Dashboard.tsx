@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SideMenu from "../reusable/SideMenu";
+// import SideMenu from "../reusable/SideMenu";
 import { useEffect, useState } from "react";
 import Analytics from "./analytics/Analytics";
 
