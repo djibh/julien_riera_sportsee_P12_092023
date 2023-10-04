@@ -3,18 +3,19 @@ import { theme } from "../../../../theme";
 
 type CardProps = {
   Icon: JSX.Element
-  keyData: number
+  keyData: number,
+  unit: string
 }
 
-export default function Card({ Icon, keyData }: CardProps) {
+export default function Card({ Icon, keyData, unit }: CardProps) {
   return (
     <CardStyled>
       <div className="card__icon">
-        {Icon && Icon}
+        { Icon && Icon }
       </div>
       <div className="card__data">        
-        <span>{keyData}</span>
-        <span>Calories</span>
+        <span>{ keyData }</span>
+        <span>{ unit }</span>
       </div>
     </CardStyled>
   )

@@ -6,7 +6,7 @@ import Settings from "../components/settings/settings"
 export const router = createBrowserRouter ([
     {
         element: <BaseLayout />,
-        errorElement: "<div>Something wring happened</div>",
+        errorElement: "<div>Something wrong happened</div>",
         children: [
             {
                 path: '/',

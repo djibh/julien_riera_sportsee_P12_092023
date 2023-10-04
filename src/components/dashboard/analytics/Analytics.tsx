@@ -63,7 +63,7 @@ const AnalyticsStyled = styled.main`
         display: flex;
         justify-content: space-between;
         gap: 1em;
-        background: green;
+        /* background: green; */
         padding: 16px;
         /* min-height: 450px; */
     }

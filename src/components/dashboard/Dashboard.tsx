@@ -1,24 +1,23 @@
 import styled from "styled-components";
-// import SideMenu from "../reusable/SideMenu";
-import { useEffect, useState } from "react";
 import Analytics from "./analytics/Analytics";
+import useMainInfo from "../../hooks/useApi";
+import DashboardContext from "../../context/DashboardContext";
 
 export default function DashboardPage() {
+  const { firstName, score, keyData, isLoading } = useMainInfo()
 
-  // data à récupérer depuis la route /user/:id
-  const [firstName, setFirstName] = useState("utilisateur inconnu")
-
-  useEffect(() => {
-    const username = 'Utilisateur adoré'
-    setFirstName(username)
-  }, [])
+  const dashboardContextValue = {
+    firstName, score, keyData
+  }
   
-
   return (
-    <DashboardPageStyled>
-      {/* <SideMenu /> */}
-      <Analytics username={firstName}/>
-    </DashboardPageStyled>
+    <DashboardContext.Provider value={dashboardContextValue}>
+      <DashboardPageStyled>
+        {/* <SideMenu /> */}
+        {isLoading && <div>Loading...</div>}
+        {!isLoading && <Analytics username={ firstName }/>}
+      </DashboardPageStyled>
+    </DashboardContext.Provider>
   )
 }
 

@@ -1,23 +1,18 @@
 import styled from "styled-components";
 import Card from "./Card";
 import { calories, proteins, carbs, fat } from "../../../../assets/icons"
+import { useContext } from "react";
+import DashboardContext from "../../../../context/DashboardContext";
 
 export default function Metrics() {
-
-
-    const data = {
-        calorieCount: 1930,
-        proteinCount: 155,
-        carbohydrateCount: 290,
-        lipidCount: 50
-    }
+    const { keyData } = useContext(DashboardContext)
 
     return (
         <MetricsStyled>
-            <Card Icon={calories} keyData={data.calorieCount}/>
-            <Card Icon={proteins} keyData={data.proteinCount}/>
-            <Card Icon={carbs} keyData={data.carbohydrateCount}/>
-            <Card Icon={fat} keyData={data.lipidCount}/>
+            <Card Icon={calories} keyData={keyData.calorieCount} unit="Calories"/>
+            <Card Icon={proteins} keyData={keyData.proteinCount} unit="Protéines"/>
+            <Card Icon={carbs} keyData={keyData.carbohydrateCount} unit="Glucides"/>
+            <Card Icon={fat} keyData={keyData.lipidCount} unit="Lipides"/>
         </MetricsStyled>
     )
 }
