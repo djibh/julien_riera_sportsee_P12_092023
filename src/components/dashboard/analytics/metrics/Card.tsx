@@ -29,7 +29,7 @@ const CardStyled = styled.article`
   align-items: center;
   box-sizing: border-box;
   font-size: 1rem;
-  height: 23%;
+  height: 20%;
   border-radius: ${theme.borderRadius.medium};
 
   .card__icon {

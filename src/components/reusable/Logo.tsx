@@ -4,7 +4,7 @@ import logo from "/logo.png"
 type LogoProps =  { classname?: string }
 
 export default function Logo({ classname }: LogoProps) {
-  return <LogoStyled className={classname}>
+  return <LogoStyled className={ classname }>
             <img src={logo}/>
         </LogoStyled>
 }
