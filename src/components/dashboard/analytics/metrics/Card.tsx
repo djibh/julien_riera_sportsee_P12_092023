@@ -24,8 +24,8 @@ export default function Card({ Icon, keyData, unit }: CardProps) {
 const CardStyled = styled.article`
   background: ${theme.colors.analyticsBackground};
   display: flex;
-  justify-content: center;
   gap: 16px;
+  padding-inline: 16px;
   align-items: center;
   box-sizing: border-box;
   font-size: 1rem;

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import logo from "/logo.png"
 
-export default function Logo() {
-  return <LogoStyled className="logo">
+type LogoProps =  { classname?: string }
+
+export default function Logo({ classname }: LogoProps) {
+  return <LogoStyled className={classname}>
             <img src={logo}/>
         </LogoStyled>
 }

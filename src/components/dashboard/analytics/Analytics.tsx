@@ -30,7 +30,7 @@ const AnalyticsStyled = styled.main`
     left: 100px;
     right: 0;
     display: grid;
-    max-width: 1450px;
+    max-width: 1100px;
     margin: auto;
     justify-content: space-between;
     grid-template-columns: 1fr;
