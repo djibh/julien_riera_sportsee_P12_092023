@@ -5,7 +5,6 @@ import useInfos from "../../../../hooks/useInfos";
 import { useParams } from "react-router-dom";
 
 export default function Metrics() {
-    // const { keyData } = useContext(DashboardContext)
     const { id } = useParams()
     const { keyData } = useInfos(id)
 
