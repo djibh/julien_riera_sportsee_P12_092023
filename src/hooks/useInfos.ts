@@ -24,6 +24,7 @@ export default function useInfos(id: string | undefined) {
                     setFirstName(`Mocked ${user.userInfos.firstName}`)
                     const score = user.todayScore || user.score
                     if (score) { setScore(score) }
+                    setKeyData(user.keyData)
                 }
             })
             .finally(() => {
