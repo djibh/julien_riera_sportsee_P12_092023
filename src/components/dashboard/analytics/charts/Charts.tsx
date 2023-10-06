@@ -1,25 +1,29 @@
-import styled from "styled-components";
-import { USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_MAIN_DATA, USER_PERFORMANCE  } from "../../../../data/mockData";
+import { useParams } from "react-router-dom";
 import ActivityChart from './ActivityChart';
-import { theme } from "../../../../theme";
 import AvgSessionChart from "./AvgSessionChart";
 import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
+import useActivity from "../../../../hooks/useActivity";
+import useAverageSessions from "../../../../hooks/useAverageSessions";
+import usePerf from "../../../../hooks/usePerfs";
+import useInfos from "../../../../hooks/useInfos";
+import styled from "styled-components";
+import { theme } from "../../../../theme";
 
 export default function Charts() {
-
-  const activity = USER_ACTIVITY[0].sessions
-  const avgSession = USER_AVERAGE_SESSIONS[0].sessions
-  const { data, kind } = USER_PERFORMANCE[0]
-  const { todayScore, score } = USER_MAIN_DATA[0]
+  const { id } = useParams<{id: string}>()
+  const { sessions } = useActivity(id)  
+  const { averageSessions } = useAverageSessions(id)
+  const { kind, performance } = usePerf(id)
+  const { score } = useInfos(id)
   
   return (
     <ChartsStyled>
-      <ActivityChart data={ activity } />
+      <ActivityChart data={ sessions } />
       <div className="square-charts">
-        <AvgSessionChart data={ avgSession }/>
-        <PerformanceChart data={ data } categories={kind} />
-        <ScoreChart score={ todayScore || score } />
+        <AvgSessionChart data={ averageSessions }/>
+        <PerformanceChart data={ performance } categories={kind} />
+        <ScoreChart score={ score } />
       </div>
     </ChartsStyled>
   )

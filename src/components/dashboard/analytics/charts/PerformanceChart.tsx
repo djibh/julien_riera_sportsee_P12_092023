@@ -7,7 +7,7 @@ type PerformanceChartProps = {
 }
 
 export default function PerformanceChart({ data, categories }: PerformanceChartProps) {
-  console.log("Categories" + categories);
+  console.log("Categories: " + categories);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
