@@ -15,12 +15,12 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    // "strict": false,
-    "noImplicitAny": false,
+    "strict": true,
+    // "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["./src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

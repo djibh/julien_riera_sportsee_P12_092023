@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Logo from "./Logo";
+import Logo from "../../components/reusable/Logo";
 import NavbarItems from "./NavbarItems";
-import { theme } from "../../theme";
+import { theme } from "../../theme/index";
 
 export default function Navbar() {
   return (
@@ -15,7 +15,10 @@ export default function Navbar() {
 }
 
 const NavbarStyled = styled.nav`
+    position: fixed;
+    z-index: 5;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     padding: 18px 28px;
     background-color: ${theme.colors.black};
