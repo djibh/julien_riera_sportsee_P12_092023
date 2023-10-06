@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { USER_MAIN_DATA } from "../data/mockData";
 
 axios.defaults.baseURL = 'http://localhost:3000'
 
@@ -7,7 +8,6 @@ export default function useInfos(id: string | undefined) {
     const [firstName, setFirstName] = useState("")
     const [score, setScore] = useState(0)
     const [keyData, setKeyData] = useState({calorieCount: 0, proteinCount: 0, carbohydrateCount: 0, lipidCount: 0})
-    const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)
 
     const fetchData = () => {
@@ -18,8 +18,13 @@ export default function useInfos(id: string | undefined) {
                 setScore(res.data.data.todayScore || res.data.data.score)
                 setKeyData(res.data.data.keyData)
             })
-            .catch((err) => {
-                setError(err)
+            .catch(() => {
+                const user = USER_MAIN_DATA.find((data) => String(data.id) === id)
+                if (user) {
+                    setFirstName(`Mocked ${user.userInfos.firstName}`)
+                    const score = user.todayScore || user.score
+                    if (score) { setScore(score) }
+                }
             })
             .finally(() => {
                 setIsLoading(false)
@@ -32,7 +37,6 @@ export default function useInfos(id: string | undefined) {
         firstName,
         score,
         keyData,
-        error,
         isLoading
     }
 }

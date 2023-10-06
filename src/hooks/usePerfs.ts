@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { USER_PERFORMANCE } from "../data/mockData";
 
 axios.defaults.baseURL = 'http://localhost:3000'
 
 export default function usePerf(id: string | undefined) {
-    const [performance, setPerformance] = useState([])
+    const [performance, setPerformance] = useState([{}])
     const [kind, setKind] = useState({})
-    const [error, setError] = useState('')
 
     const fetchData = () => {
         axios
@@ -15,8 +15,12 @@ export default function usePerf(id: string | undefined) {
                 setKind(res.data.data.kind)
                 setPerformance(res.data.data.data)
             })
-            .catch((err) => {
-                setError(err)
+            .catch(() => {
+                const userPerf = USER_PERFORMANCE.find((data) => String(data.userId) === id)
+                if (userPerf) {
+                    setKind(userPerf.kind)
+                    setPerformance(userPerf.data);
+                }
             })
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,7 +28,6 @@ export default function usePerf(id: string | undefined) {
     
     return {
         kind,
-        performance,
-        error
+        performance
     }
 }
