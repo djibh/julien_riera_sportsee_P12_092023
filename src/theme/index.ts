@@ -3,15 +3,12 @@ const colors = {
     black: "#020203",
     accentRed: "#ff0000",
     activityChartLegend: "#74798C",
-    barChartBlack: "#282d30",
+    chartsBlack: "#282d30",
     barChartRed: "#E60000",
     barChartGridGrey: "#dedede",
-    lineChartRed: "#FF0000",
     lineChartGrey: "#ffffff",
-    radarChartBlack: "#282D30",
     radarChartRed: "#FF0101",
     analyticsBackground: "#fbfbfb",
-
 }
 
 const borderRadius = {

@@ -54,11 +54,11 @@ export default function ActivityChart({ data }: ActivityChartProps) {
             wrapperStyle={{margin: 0, fontSize: 12}} 
             payload={
                 [
-                    {id: 'kg', value: 'Poids (kg)', type: 'circle', color: `${theme.colors.barChartBlack}`},
+                    {id: 'kg', value: 'Poids (kg)', type: 'circle', color: `${theme.colors.chartsBlack}`},
                     {id: 'cal', value: 'Calories brûlées (Kcal)', type: 'circle', color: `${theme.colors.barChartRed}`}
                 ]
             }/>
-          <Bar id='kg' yAxisId="right" dataKey="kilogram" barSize={8} fill={theme.colors.barChartBlack} radius={[4, 4, 0, 0]}/>
+          <Bar id='kg' yAxisId="right" dataKey="kilogram" barSize={8} fill={theme.colors.chartsBlack} radius={[4, 4, 0, 0]}/>
           <Bar id='cal' dataKey="calories" barSize={8} fill={theme.colors.barChartRed} radius={[4, 4, 0, 0]}/>
         </BarChart>
       </ResponsiveContainer>

@@ -14,7 +14,7 @@ export default function AvgSessionChart({ data }: AvgSessionChartProps) {
         <ResponsiveContainer width="100%" height="100%" >
             <LineChart 
                 margin={{ top: 70, right: 30, left: 20, bottom: 40 }}
-                style={{backgroundColor: `${theme.colors.lineChartRed}`, borderRadius: `${theme.borderRadius.medium}`}} 
+                style={{backgroundColor: `${theme.colors.accentRed}`, borderRadius: `${theme.borderRadius.medium}`}} 
                 data={data}>
               <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: "white", opacity: .6, fontSize: "0.9rem"}} tickMargin={20} />
               <YAxis hide domain={['dataMin-10', 'dataMax+10']} />
@@ -36,8 +36,8 @@ const AvgSessionsTitleStyled = styled.h1`
   position: absolute;
   margin: 0;
   padding: 18px;
-  color: #20253a;
-  opacity: 0.6;
+  color: #FFF;
+  opacity: 0.504;
   font-size: .95rem;
   font-weight: 500;
   z-index: 5;

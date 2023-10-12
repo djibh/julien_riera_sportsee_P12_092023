@@ -20,10 +20,16 @@ export default function Charts() {
   return (
     <ChartsStyled>
       <ActivityChart data={ sessions } />
-      <div className="square-charts">
-        <AvgSessionChart data={ averageSessions }/>
-        <PerformanceChart data={ performance } categories={kind} />
-        <ScoreChart score={ score } />
+      <div className="flex">
+        <div className="chart-container">
+          <AvgSessionChart data={ averageSessions }/>
+        </div>
+        <div className="chart-container">
+          <PerformanceChart data={ performance } categories={kind} />
+        </div>
+        <div className="chart-container">
+          <ScoreChart score={ score } />
+        </div>
       </div>
     </ChartsStyled>
   )
@@ -37,14 +43,16 @@ const ChartsStyled = styled.div`
     width: 75%;
     border-radius: ${theme.borderRadius.medium};
 
-    .square-charts {
+    .flex {
       display: flex;
       justify-content: space-between;
       gap: 10px;
       height: 45%;
     }
 
-    .square-charts > * {
+    .chart-container {
+      position: relative;
+      width: 100%;
       aspect-ratio: 1;
     }
 `;
