@@ -36,7 +36,7 @@ export default function ScoreChart({ score }: ScoreChartProps) {
             </RadialBarChart>
         </ResponsiveContainer>
 
-        <span style={{position: "absolute", top: "10px", left: "10px", color: "#20253A"}}>Score</span>
+        <span style={{position: "absolute", top: "10px", left: "10px", color: `${theme.colors.chartsTitleDark}`}}>Score</span>
         <ScoreContentStyled>
           <span>{ scoreToPercent }%</span>
           <span>de votre objectif</span>
@@ -62,7 +62,7 @@ const ScoreContentStyled = styled.div`
 
     border-radius: 50%;
     background-color: white;
-    color: #20253a;
+    color: ${theme.colors.chartsTitleDark};
     font-weight: 500;
 
     & h2 {

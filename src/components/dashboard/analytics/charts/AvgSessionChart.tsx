@@ -32,7 +32,7 @@ export default function AvgSessionChart({ data }: AvgSessionChartProps) {
   )
 }
 
-const AvgSessionsTitleStyled = styled.h1`
+const AvgSessionsTitleStyled = styled.span`
   position: absolute;
   margin: 0;
   padding: 18px;
