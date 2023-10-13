@@ -13,13 +13,7 @@ export default function ScoreChart({ score }: ScoreChartProps) {
     scoreToPercent = score * 100
   }
   
-  const data = [
-    {
-      "name": "18-24",
-      "uv": score,
-      "pv": 2400,
-    }
-  ]
+  const data = [{ value: score }]
   
   return ( <>
         <ResponsiveContainer width="100%" height="100%">
@@ -31,8 +25,7 @@ export default function ScoreChart({ score }: ScoreChartProps) {
               endAngle={200}
               style={{backgroundColor: `${theme.colors.analyticsBackground}`, borderRadius: `${theme.borderRadius.medium}`}}
               >
-              <RadialBar dataKey='uv'cornerRadius={16} fill={`${theme.colors.accentRed}`}/>
-              <Tooltip />
+              <RadialBar dataKey='value' cornerRadius={16} fill={`${theme.colors.accentRed}`}/>
             </RadialBarChart>
         </ResponsiveContainer>
 
@@ -53,11 +46,10 @@ const ScoreContentStyled = styled.div`
     align-items: center;
     top: 50%;
     left: 50%;
-    width: 35%;
-    height: 35%;
+    width: 56%;
+    height: 56%;
     margin: 0;
     text-align: center;
-    padding: 18px;
     transform: translate(-50%, -50%);
 
     border-radius: 50%;
