@@ -7,6 +7,11 @@ type AvgSessionChartProps = {
 }
 
 export default function AvgSessionChart({ data }: AvgSessionChartProps) {
+  const getWeekDay = (val: number): string => {
+    const weekDays = ["L", "M", "M", "J", "V", "S", "D"];
+    return weekDays[val-1];
+  }
+
   return (<>
         <AvgSessionsTitleStyled>
           Durée moyenne des sessions
@@ -16,7 +21,7 @@ export default function AvgSessionChart({ data }: AvgSessionChartProps) {
                 margin={{ top: 70, right: 30, left: 20, bottom: 40 }}
                 style={{backgroundColor: `${theme.colors.accentRed}`, borderRadius: `${theme.borderRadius.medium}`}} 
                 data={data}>
-              <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: "white", opacity: .6, fontSize: "0.9rem"}} tickMargin={20} />
+              <XAxis dataKey="day" axisLine={false} tickLine={false} tickFormatter={getWeekDay} tick={{fill: "white", opacity: .6, fontSize: "0.95rem"}} tickMargin={20} />
               <YAxis hide domain={['dataMin-10', 'dataMax+10']} />
               <Tooltip />
               <defs>

@@ -1,4 +1,4 @@
-import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 import { theme } from '../../../../theme';
 import styled from 'styled-components';
 
