@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis, ReferenceArea } from 'recharts';
 import { theme } from '../../../../theme';
 import styled from 'styled-components';
 
@@ -23,13 +23,15 @@ export default function AvgSessionChart({ data }: AvgSessionChartProps) {
                 data={data}>
               <XAxis dataKey="day" axisLine={false} tickLine={false} tickFormatter={getWeekDay} tick={{fill: "white", opacity: .6, fontSize: "0.95rem"}} tickMargin={20} />
               <YAxis hide domain={['dataMin-10', 'dataMax+10']} />
-              <Tooltip />
+              {/* <Tooltip content={CustomToolTip}/> */}
+              <Tooltip formatter={(value: number) => [`${value} min`]} labelStyle={{ display: "none" }}/>
               <defs>
                 <linearGradient id="line-gradient" x1="309.906" y1="-1.97779" x2="-47.7754" y2="-1.97779" gradientUnits="userSpaceOnUse">
                   <stop stopColor="white"/>
                   <stop offset="0.810441" stopColor="white" stopOpacity="0.403191"/>
                 </linearGradient>
               </defs>
+              {/* <ReferenceArea x={}/> */}
               <Line type="natural" dot={false} activeDot={{stroke: '#FFF', strokeWidth: 4, r: 2	}} dataKey="sessionLength" stroke="url(#line-gradient)" strokeWidth={2}/>
             </LineChart>
         </ResponsiveContainer>
