@@ -3,7 +3,11 @@ import Analytics from "./analytics/Analytics";
 import useInfos from "../../hooks/useInfos";
 import { useParams } from "react-router-dom";
 
-export default function DashboardPage() {
+/**
+ * Renders Dashboard view when infos are loaded
+ * @returns { React.Component } A React component
+ */
+export default function DashboardPage(): JSX.Element {
   const { id } = useParams<{id: string}>()
   const { firstName, isLoading } = useInfos(id)  
 

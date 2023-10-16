@@ -6,7 +6,13 @@ type AvgSessionChartProps = {
   data: object[]
 }
 
-function CustomCursor({ width, height, points: [{ x }] }) {
+/**
+ * This component renders a rectangle element used as a cursor type for the average sessions charts.
+ * It darkens the area from the hovered dot to the end of the chart.
+ * @returns { React.Component } A React component
+ */
+
+function CustomCursor({ width, height, points: [{ x }] }): JSX.Element {
   return (
     <Rectangle
       fill="black"
@@ -23,7 +29,12 @@ function CustomCursor({ width, height, points: [{ x }] }) {
   );
 }
 
-export default function AvgSessionChart({ data }: AvgSessionChartProps) {
+/**
+ * This component renders the average sessions chart
+ * @returns { React.Component } A React component
+ */
+
+export default function AvgSessionChart({ data }: AvgSessionChartProps): JSX.Element {
   const getWeekDay = (val: number): string => {
     const weekDays = ["L", "M", "M", "J", "V", "S", "D"];
     return weekDays[val-1];

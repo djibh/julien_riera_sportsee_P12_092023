@@ -10,11 +10,16 @@ import useInfos from "../../../../hooks/useInfos";
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 
-export default function Charts() {
+/**
+ * This component renders the charts of the page
+ * @returns { React.Component } A React component
+ */
+
+export default function Charts(): JSX.Element {
   const { id } = useParams<{id: string}>()
   const { sessions } = useActivity(id)  
   const { averageSessions } = useAverageSessions(id)
-  const { kind, performance } = usePerf(id)
+  const { performance } = usePerf(id)
   const { score } = useInfos(id)
   
   return (
@@ -25,7 +30,7 @@ export default function Charts() {
           <AvgSessionChart data={ averageSessions }/>
         </div>
         <div className="chart-container">
-          <PerformanceChart data={ performance } categories={kind} />
+          <PerformanceChart data={ performance } />
         </div>
         <div className="chart-container">
           <ScoreChart score={ score } />

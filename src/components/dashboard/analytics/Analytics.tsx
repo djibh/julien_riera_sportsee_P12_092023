@@ -7,7 +7,12 @@ type MainProps = {
     username: string
 }
 
-export default function Analytics({ username }: MainProps) {
+/**
+ * This component renders the main content whiche includes heading and charts
+ * @param { String } username
+ * @returns { React.Component } A React component
+ */
+export default function Analytics({ username }: MainProps): JSX.Element {
   return (
              <AnalyticsStyled>
               <div className="center-main">
