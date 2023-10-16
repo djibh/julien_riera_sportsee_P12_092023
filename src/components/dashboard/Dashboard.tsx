@@ -1,21 +1,21 @@
 import styled from "styled-components";
 import Analytics from "./analytics/Analytics";
-import useMainInfo from "../../hooks/useApi";
-import DashboardContext from "../../context/DashboardContext";
+import useInfos from "../../hooks/useInfos";
 import { useParams } from "react-router-dom";
 
-export default function DashboardPage() {
-  const { id } = useParams()
-  const { firstName, score, keyData, isLoading } = useMainInfo(id)  
-  const dashboardContextValue = { firstName, score, keyData }
-  
+/**
+ * Renders Dashboard view when infos are loaded
+ * @returns { React.Component } A React component
+ */
+export default function DashboardPage(): JSX.Element {
+  const { id } = useParams<{id: string}>()
+  const { firstName, isLoading } = useInfos(id)  
+
   return (
-    <DashboardContext.Provider value={dashboardContextValue}>
       <DashboardPageStyled>
         {isLoading && <div>Loading...</div>}
         {!isLoading && <Analytics username={ firstName }/>}
       </DashboardPageStyled>
-    </DashboardContext.Provider>
   )
 }
 

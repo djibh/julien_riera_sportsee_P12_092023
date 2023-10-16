@@ -35,11 +35,11 @@ const HomePageStyled = styled.div`
   display: grid;
   place-content: center;
   justify-content: center;
-  background: ${theme.colors.analyticsBackground};
+  background: ${theme.colors.barChartGridGrey};
   z-index: 10;
 
   .logo {
-    scale: 1.2;
+    scale: 1.15;
   }
 
   .login-form {
@@ -47,22 +47,25 @@ const HomePageStyled = styled.div`
     text-align: center;
     display: flex;
     height: 25vh;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 450px;
     flex-direction: column;
     justify-content: space-between;
-    padding: 3em 2em;
+    padding: 3em 1em;
     background: ${theme.colors.analyticsBackground};
     border-radius: ${theme.borderRadius.large};
-    box-shadow: 0px 5px 24px rgba(200, 200, 200, 0.8);    
+    box-shadow: 0px 5px 12px rgba(180, 180, 180, 0.8);    
     
     & h1 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
+      font-weight: 400;
       color: ${theme.colors.barChartBlack}
     }
 
     .form__btns {
       display: flex;
-      gap: 8px;
-      justify-content: center;
+      justify-content: space-evenly;
   
       & :first-child {
         background-color: #FF3B3B;

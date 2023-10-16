@@ -7,7 +7,12 @@ type MainProps = {
     username: string
 }
 
-export default function Analytics({ username }: MainProps) {
+/**
+ * This component renders the main content whiche includes heading and charts
+ * @param { String } username
+ * @returns { React.Component } A React component
+ */
+export default function Analytics({ username }: MainProps): JSX.Element {
   return (
              <AnalyticsStyled>
               <div className="center-main">
@@ -30,7 +35,7 @@ const AnalyticsStyled = styled.main`
     left: 100px;
     right: 0;
     display: grid;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     justify-content: space-between;
     grid-template-columns: 1fr;
@@ -52,6 +57,7 @@ const AnalyticsStyled = styled.main`
 
         h2 {
           font-size: 1.4rem;
+          margin-bottom: 0;
         }
         
         .username {
@@ -64,7 +70,7 @@ const AnalyticsStyled = styled.main`
         justify-content: space-between;
         gap: 1em;
         /* background: green; */
-        padding: 16px;
+        padding: 0px;
         /* min-height: 450px; */
     }
 `;

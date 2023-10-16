@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Card from "./Card";
 import { calories, proteins, carbs, fat } from "../../../../assets/icons"
-import { useContext } from "react";
-import DashboardContext from "../../../../context/DashboardContext";
+import useInfos from "../../../../hooks/useInfos";
+import { useParams } from "react-router-dom";
 
 export default function Metrics() {
-    const { keyData } = useContext(DashboardContext)
+    const { id } = useParams()
+    const { keyData } = useInfos(id)
 
     return (
         <MetricsStyled>

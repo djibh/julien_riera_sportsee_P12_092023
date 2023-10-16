@@ -1,25 +1,40 @@
-import styled from "styled-components";
-import { USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_MAIN_DATA, USER_PERFORMANCE  } from "../../../../data/mockData";
+import { useParams } from "react-router-dom";
 import ActivityChart from './ActivityChart';
-import { theme } from "../../../../theme";
 import AvgSessionChart from "./AvgSessionChart";
 import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
+import useActivity from "../../../../hooks/useActivity";
+import useAverageSessions from "../../../../hooks/useAverageSessions";
+import usePerf from "../../../../hooks/usePerfs";
+import useInfos from "../../../../hooks/useInfos";
+import styled from "styled-components";
+import { theme } from "../../../../theme";
 
-export default function Charts() {
+/**
+ * This component renders the charts of the page
+ * @returns { React.Component } A React component
+ */
 
-  const activity = USER_ACTIVITY[0].sessions
-  const avgSession = USER_AVERAGE_SESSIONS[0].sessions
-  const { data, kind } = USER_PERFORMANCE[0]
-  const { todayScore, score } = USER_MAIN_DATA[0]
+export default function Charts(): JSX.Element {
+  const { id } = useParams<{id: string}>()
+  const { sessions } = useActivity(id)  
+  const { averageSessions } = useAverageSessions(id)
+  const { performance } = usePerf(id)
+  const { score } = useInfos(id)
   
   return (
     <ChartsStyled>
-      <ActivityChart data={ activity } />
-      <div className="square-charts">
-        <AvgSessionChart data={ avgSession }/>
-        <PerformanceChart data={ data } categories={kind} />
-        <ScoreChart score={ todayScore || score } />
+      <ActivityChart data={ sessions } />
+      <div className="flex">
+        <div className="chart-container">
+          <AvgSessionChart data={ averageSessions }/>
+        </div>
+        <div className="chart-container">
+          <PerformanceChart data={ performance } />
+        </div>
+        <div className="chart-container">
+          <ScoreChart score={ score } />
+        </div>
       </div>
     </ChartsStyled>
   )
@@ -33,14 +48,16 @@ const ChartsStyled = styled.div`
     width: 75%;
     border-radius: ${theme.borderRadius.medium};
 
-    .square-charts {
+    .flex {
       display: flex;
       justify-content: space-between;
       gap: 10px;
       height: 45%;
     }
 
-    .square-charts > * {
+    .chart-container {
+      position: relative;
+      width: 100%;
       aspect-ratio: 1;
     }
 `;
