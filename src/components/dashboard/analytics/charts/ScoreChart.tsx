@@ -6,7 +6,12 @@ type ScoreChartProps = {
   score: number
 }
 
-export default function ScoreChart({ score }: ScoreChartProps) {
+/**
+ * This component renders the daily score chart.
+ * @property { number } score
+ * @returns { React.Component } A React component
+ */
+export default function ScoreChart({ score }: ScoreChartProps): JSX.Element {
   let scoreToPercent; 
   if (score) {
     scoreToPercent = Math.round(score * 100)

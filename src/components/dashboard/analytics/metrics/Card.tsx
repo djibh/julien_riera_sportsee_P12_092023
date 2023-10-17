@@ -7,7 +7,14 @@ type CardProps = {
   unit: string
 }
 
-export default function Card({ Icon, keyData, unit }: CardProps) {
+/**
+ * This component renders a Card component for the macro shown in the dashboard.
+ * @property { JSX.Element } Icon
+ * @property { number } keyData
+ * @property { string } unit (e.g. calories)
+ * @returns { React.Component } A React component
+ */
+export default function Card({ Icon, keyData, unit }: CardProps): JSX.Element {
   return (
     <CardStyled>
       <div className="card__icon">
