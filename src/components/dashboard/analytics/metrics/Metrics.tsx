@@ -4,7 +4,12 @@ import { calories, proteins, carbs, fat } from "../../../../assets/icons"
 import useInfos from "../../../../hooks/useInfos";
 import { useParams } from "react-router-dom";
 
-export default function Metrics() {
+/**
+ * This component acts as a container for the metrics <Card/> components.
+ * It also fetches the user ID and infos to be passed to those cards.
+ * @returns { React.Component } A React component
+ */
+export default function Metrics(): JSX.Element {
     const { id } = useParams()
     const { keyData } = useInfos(id)
 
