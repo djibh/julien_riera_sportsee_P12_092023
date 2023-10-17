@@ -14,8 +14,23 @@ type PolarAngleProps = {
   cy: number
 }
 
-export default function PerformanceChart({ data }: PerformanceChartProps) {
-  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }: PolarAngleProps) {
+/**
+ * This component renders a custom tooltip for the performance chart.
+ * @prop { object[] } data
+ * @returns { React.Component } A React component
+ */
+export default function PerformanceChart({ data }: PerformanceChartProps): JSX.Element {
+
+    /**
+   * This component renders a custom legend for the radar chart.
+   * @prop { TooltipProps<ValueType, NameType> } payload
+   * @property { number } x - current x axis position
+   * @property { number } y - current x axis position
+   * @property { number } cx - x axis offset from origin
+   * @property { number } cy - y axis offset from origin
+   * @returns { React.Component } A React component
+   */
+  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }: PolarAngleProps): JSX.Element {
     const getFrenchCategories = (kindKey: string): string => {
       const categories = {
         1: "Cardio",
