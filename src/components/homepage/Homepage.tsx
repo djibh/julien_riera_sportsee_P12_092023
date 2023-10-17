@@ -67,7 +67,7 @@ const HomePageStyled = styled.div`
     & h1 {
       font-size: 1.3rem;
       font-weight: 400;
-      color: ${theme.colors.barChartBlack}
+      color: ${theme.colors.chartsBlack}
     }
 
     .form__btns {

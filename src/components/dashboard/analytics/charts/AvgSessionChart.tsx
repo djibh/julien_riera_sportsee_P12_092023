@@ -9,7 +9,7 @@ type AvgSessionChartProps = {
 type CustomCursorProps = {
   width: number,
   height: number,
-  points: object[]
+  points: [{x: number}],
 }
 
 /**
