@@ -9,8 +9,8 @@ type ActivityChartProps = {
 
 /**
  * This component renders a custom tooltip for the activity chart.
- * @prop { boolean } active
- * @prop { TooltipProps<ValueType, NameType> } payload
+ * @property { boolean } active
+ * @property { TooltipProps<ValueType, NameType> } payload
  * @returns { React.Component } A React component
  */
 function CustomToolTip({ active, payload }: TooltipProps<ValueType, NameType>): JSX.Element {
@@ -35,7 +35,7 @@ const CustomToolTipStyled = styled.div`
 
 /**
  * This component renders a custom tooltip for the activity chart.
- * @prop { object[] } data
+ * @property { object[] } data
  * @returns { React.Component } A React component
  */
 export default function ActivityChart({ data }: ActivityChartProps): JSX.Element {

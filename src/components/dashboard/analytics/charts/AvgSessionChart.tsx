@@ -15,10 +15,10 @@ type CustomCursorProps = {
 /**
  * This component renders a rectangle element used as a cursor type for the average sessions chart.
  * It darkens the area from the hovered dot to the end of the chart.
- * @prop { number } width
- * @prop { number } height
- * @prop { object[] } points
- * @prop { number } x
+ * @property { number } width
+ * @property { number } height
+ * @property { object[] } points
+ * @property { number } x
  * @returns { React.Component } A React component
  */
 function CustomCursor({ width, height, points: [{ x }] }: CustomCursorProps): JSX.Element {
@@ -40,7 +40,7 @@ function CustomCursor({ width, height, points: [{ x }] }: CustomCursorProps): JS
 
 /**
  * This component renders the average sessions chart
- * @param { object[] } data
+ * @property { object[] } data
  * @returns { React.Component } A React component
  */
 export default function AvgSessionChart({ data }: AvgSessionChartProps): JSX.Element {
