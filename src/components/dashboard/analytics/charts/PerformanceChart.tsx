@@ -1,14 +1,18 @@
-import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer, Text } from 'recharts';
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer, Text, TooltipProps } from 'recharts';
+import { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
 import { theme } from '../../../../theme';
 
 type PerformanceChartProps = {
-  data: object[]
+  data: object[],
+  payload: TooltipProps<ValueType, NameType>
+  x: number,
+  y: number,
+  cx: number,
+  cy: number
 }
 
 export default function PerformanceChart({ data }: PerformanceChartProps) {
-  
-
-  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }) {
+  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }: PerformanceChartProps) {
     const getFrenchCategories = (kindKey: string): string => {
       const categories = {
         1: "Cardio",
@@ -25,8 +29,8 @@ export default function PerformanceChart({ data }: PerformanceChartProps) {
       <Text
         {...rest}
         verticalAnchor="middle"
-        y={y + (y - cy) / 12}
-        x={x + (x - cx) / 12}
+        y={y + (y - cy) / 15}
+        x={x + (x - cx) / 15}
         fill="#fff"
         fontSize="12px"
       >

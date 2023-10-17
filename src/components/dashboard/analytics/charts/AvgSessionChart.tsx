@@ -1,4 +1,5 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis, Rectangle } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis, Rectangle, TooltipProps } from 'recharts';
+import { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
 import { theme } from '../../../../theme';
 import styled from 'styled-components';
 
@@ -12,7 +13,7 @@ type AvgSessionChartProps = {
  * @returns { React.Component } A React component
  */
 
-function CustomCursor({ width, height, points: [{ x }] }): JSX.Element {
+function CustomCursor({ width, height, points: [{ x }] }: TooltipProps<ValueType, NameType>): JSX.Element {
   return (
     <Rectangle
       fill="black"
