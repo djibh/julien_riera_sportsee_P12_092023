@@ -8,7 +8,7 @@ type MainProps = {
 }
 
 /**
- * This component renders the main content whiche includes heading and charts
+ * This component renders the main content whiche includes heading and charts.
  * @property { string } username
  * @returns { React.Component } A React component
  */
