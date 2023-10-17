@@ -4,7 +4,14 @@ import { theme } from "../../theme";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Homepage() {
+
+/**
+ * This component renders the user selection buttons, it will be replaced by future actual login/signup elements.
+ * If the backend is running, the hooks will use the selected ID as a parameter to request data from it using Axios.
+ * Otherwise, the data will be loaded using those same ID via src/data/mockData.ts
+ * @returns { React.Component } A React component
+ */
+export default function Homepage(): JSX.Element {
   const [userId, setUserId ] = useState("")
   const navigate = useNavigate()
 
