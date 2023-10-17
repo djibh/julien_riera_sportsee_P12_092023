@@ -1,4 +1,5 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, TooltipProps } from 'recharts';
+import { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
 import { theme } from "../../../../theme/index";
 import styled from 'styled-components';
 
@@ -6,7 +7,13 @@ type ActivityChartProps = {
   data: object[]
 }
 
-function CustomToolTip({ active, payload }) {
+/**
+ * This component renders a custom tooltip for the activity chart.
+ * @prop { boolean } active
+ * @prop { TooltipProps<ValueType, NameType> } payload
+ * @returns { React.Component } A React component
+ */
+function CustomToolTip({ active, payload }: TooltipProps<ValueType, NameType>): JSX.Element {
 	if (active && payload && payload.length) {
 		return (
 			<CustomToolTipStyled>
@@ -15,7 +22,7 @@ function CustomToolTip({ active, payload }) {
 			</CustomToolTipStyled>
 		)
 	}
-	return null
+	return <p>Something went wrong with the activity tooltip</p>
 }
 
 const CustomToolTipStyled = styled.div`
@@ -26,7 +33,12 @@ const CustomToolTipStyled = styled.div`
     text-align: center;
 `;
 
-export default function ActivityChart({ data }: ActivityChartProps) {
+/**
+ * This component renders a custom tooltip for the activity chart.
+ * @prop { object[] } data
+ * @returns { React.Component } A React component
+ */
+export default function ActivityChart({ data }: ActivityChartProps): JSX.Element {
   return ( <>
     <ResponsiveContainer width="100%" height="100%">
         <BarChart

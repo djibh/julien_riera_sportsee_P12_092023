@@ -1,5 +1,4 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis, Rectangle, TooltipProps } from 'recharts';
-import { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, YAxis, Rectangle } from 'recharts';
 import { theme } from '../../../../theme';
 import styled from 'styled-components';
 
@@ -7,13 +6,22 @@ type AvgSessionChartProps = {
   data: object[]
 }
 
+type CustomCursorProps = {
+  width: number,
+  height: number,
+  points: object[]
+}
+
 /**
- * This component renders a rectangle element used as a cursor type for the average sessions charts.
+ * This component renders a rectangle element used as a cursor type for the average sessions chart.
  * It darkens the area from the hovered dot to the end of the chart.
+ * @prop { number } width
+ * @prop { number } height
+ * @prop { object[] } points
+ * @prop { number } x
  * @returns { React.Component } A React component
  */
-
-function CustomCursor({ width, height, points: [{ x }] }: TooltipProps<ValueType, NameType>): JSX.Element {
+function CustomCursor({ width, height, points: [{ x }] }: CustomCursorProps): JSX.Element {
   return (
     <Rectangle
       fill="black"
@@ -32,9 +40,9 @@ function CustomCursor({ width, height, points: [{ x }] }: TooltipProps<ValueType
 
 /**
  * This component renders the average sessions chart
+ * @param { object[] } data
  * @returns { React.Component } A React component
  */
-
 export default function AvgSessionChart({ data }: AvgSessionChartProps): JSX.Element {
   const getWeekDay = (val: number): string => {
     const weekDays = ["L", "M", "M", "J", "V", "S", "D"];

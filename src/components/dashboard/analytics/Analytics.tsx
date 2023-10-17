@@ -9,7 +9,7 @@ type MainProps = {
 
 /**
  * This component renders the main content whiche includes heading and charts
- * @param { String } username
+ * @prop { string } username
  * @returns { React.Component } A React component
  */
 export default function Analytics({ username }: MainProps): JSX.Element {

@@ -4,6 +4,9 @@ import { theme } from '../../../../theme';
 
 type PerformanceChartProps = {
   data: object[],
+}
+
+type PolarAngleProps = {
   payload: TooltipProps<ValueType, NameType>
   x: number,
   y: number,
@@ -12,7 +15,7 @@ type PerformanceChartProps = {
 }
 
 export default function PerformanceChart({ data }: PerformanceChartProps) {
-  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }: PerformanceChartProps) {
+  function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }: PolarAngleProps) {
     const getFrenchCategories = (kindKey: string): string => {
       const categories = {
         1: "Cardio",

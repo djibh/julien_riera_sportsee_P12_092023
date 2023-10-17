@@ -14,7 +14,6 @@ import { theme } from "../../../../theme";
  * This component renders the charts of the page
  * @returns { React.Component } A React component
  */
-
 export default function Charts(): JSX.Element {
   const { id } = useParams<{id: string}>()
   const { sessions } = useActivity(id)  
