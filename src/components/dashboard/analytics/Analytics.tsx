@@ -32,14 +32,14 @@ export default function Analytics({ username }: MainProps): JSX.Element {
 const AnalyticsStyled = styled.main`
     position: absolute;
     top: 0;
-    left: 100px;
+    left: 110px;
     right: 0;
     display: grid;
     max-width: 1200px;
     margin: auto;
     justify-content: space-between;
     grid-template-columns: 1fr;
-    padding: 3em;
+    padding: 2em;
     margin-top: 6em;
 
     .center-main {
@@ -69,8 +69,6 @@ const AnalyticsStyled = styled.main`
         display: flex;
         justify-content: space-between;
         gap: 1em;
-        /* background: green; */
         padding: 0px;
-        /* min-height: 450px; */
     }
 `;

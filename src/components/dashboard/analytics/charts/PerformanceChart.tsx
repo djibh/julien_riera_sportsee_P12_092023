@@ -53,10 +53,10 @@ export default function PerformanceChart({ data }: PerformanceChartProps): JSX.E
       <Text
         {...rest}
         verticalAnchor="middle"
-        y={y + (y - cy) / 15}
-        x={x + (x - cx) / 15}
+        y={y + (y - cy) / 60}
+        x={x + (x - cx) / 60}
         fill="#fff"
-        fontSize="12px"
+        fontSize="11px"
       >
         {getFrenchCategories(payload.value)}
       </Text>
