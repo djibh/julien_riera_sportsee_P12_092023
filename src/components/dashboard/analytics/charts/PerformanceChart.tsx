@@ -53,8 +53,8 @@ export default function PerformanceChart({ data }: PerformanceChartProps): JSX.E
       <Text
         {...rest}
         verticalAnchor="middle"
-        y={y + (y - cy) / 60}
-        x={x + (x - cx) / 60}
+        y={y + (y - cy) / 5}
+        x={x + (x - cx) / 20}
         fill="#fff"
         fontSize="11px"
       >
@@ -68,7 +68,7 @@ export default function PerformanceChart({ data }: PerformanceChartProps): JSX.E
     <ResponsiveContainer width="100%" height="100%" className="position">
       <RadarChart 
           style={{backgroundColor: `${theme.colors.chartsBlack}`, borderRadius:`${theme.borderRadius.medium}`}} 
-          outerRadius={80}
+          outerRadius={70}
           innerRadius={10}
           data={data}>
         <PolarGrid gridType='polygon' radialLines={false} />
